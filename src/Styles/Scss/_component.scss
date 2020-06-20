@@ -1,0 +1,417 @@
+.bottom-line {
+    width: 50%;
+    height: 0.3rem;
+    background-color: $primary;
+    border-radius: 3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+// dashboard style
+.dashboard-wrapper {
+    .dashboard-container {
+        @include flex(center, space-between, row);
+        .dashboard-sidebar {
+            width: 14rem;
+            background-color: $white;
+            height: 100vh;
+            overflow-y: auto;
+            @include disableScroll;
+        }
+        .dashboard-content {
+            width: calc(100% - 14rem);
+            background-color: $lightGray;
+            height: 100vh;
+            overflow: auto;
+            @include disableScroll;
+            .dashboard-header {
+                @include flex(center, flex-start, column);
+                position: sticky;
+                top: 0;
+                z-index: 24;
+                @include borderRadius;
+                @include cardShadow;
+                .header-top {
+                    background-color: $white;
+                    width: 100%;
+                    padding: 0.7rem 1.5rem;
+                    @include flex(center, space-between, row);
+                    .school-name-container {
+                        @include flex(center, space-between, row);
+                        p {
+                            margin-right: 1rem;
+                            font-weight: 500;
+                            font-size: 1.4rem;
+                        }
+                    }
+
+                    .bages-avatar {
+                        @include flex(center, space-between, row);
+                        button.notification-btn {
+                            margin-right: 2rem;
+                        }
+                    }
+                    .notification-badge {
+                        span {
+                            background-color: $primary;
+                            color: $white;
+                        }
+                    }
+                }
+                .header {
+                    @include flex(center, flex-start, row);
+                    padding: 0.2rem 1.5rem;
+                    width: 100%;
+                    background-color: $grayPrimary;
+                    align-self: flex-start;
+                    .icon {
+                        color: black;
+                        font-size: 2rem;
+                        margin-right: 1rem;
+                    }
+                    .heading {
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                        // letter-spacing: 0.1rem;
+                        text-transform: capitalize;
+                        .splitter {
+                            display: inline-block;
+                            font-size: 0.95rem;
+                            padding: 0 0.2rem;
+                        }
+                    }
+                    .date-container {
+                        width: 11rem;
+                        margin-left: auto;
+                        div {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            .dashboard-main-content {
+                padding: 1.5rem 1.5rem 0 1.5rem;
+            }
+        }
+    }
+}
+
+// sidebar style
+.dashboard-sidebar {
+    @include cardShadow;
+    background-color: $primary !important;
+    z-index: 2;
+    .logo-container {
+        @include flex(center, center, column);
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: $primary;
+        .logo {
+            font-weight: 900;
+            color: $white;
+        }
+        .slogan {
+            color: $white;
+        }
+    }
+    ul {
+        width: 100%;
+        transition: all 0.3s;
+        li {
+            background-color: $primary;
+            button {
+                width: 100%;
+                color: $white;
+                text-transform: capitalize;
+                @include flex(center, flex-start, row);
+                font-weight: 500;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                text-align: left;
+                .MuiSvgIcon-root {
+                    font-size: 1.2rem;
+                    margin-right: 1rem;
+                    color: $white;
+                }
+                .arrows {
+                    font-size: 1rem;
+                    color: $white;
+                    position: absolute;
+                    right: 1rem;
+                }
+            }
+            ul {
+                list-style: none;
+                li {
+                    background-color: $primary;
+                    button {
+                        font-size: 0.8rem;
+                        padding-left: 4.5rem;
+                        padding-right: 0;
+                        padding-top: 0.3rem;
+                        padding-bottom: 0.3rem;
+                        font-weight: 100;
+                        color: $white;
+                    }
+                    ul{
+                        li{
+                            button {
+                                font-size: 0.7rem;
+                                padding-left: 5.5rem;
+                                padding-right: 0;
+                                padding-top: 0.3rem;
+                                padding-bottom: 0.3rem;
+                                font-weight: 100;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-container {
+    @include cardShadow;
+    @include borderRadius;
+    background-color: $white;
+    margin-bottom: 1.5rem;
+}
+
+.blue-gradient {
+    border-radius: 0.3rem;
+    background: linear-gradient(45deg, #667eea, #64b6ff);
+    color: $white;
+}
+.red-gradient {
+    border-radius: 0.3rem;
+    background: linear-gradient(45deg, #ff5858, #fb5895);
+    color: $white;
+}
+.green-gradient {
+    border-radius: 0.3rem;
+    background: linear-gradient(45deg, #27b958, #1eb99d);
+    color: $white;
+}
+
+.primary {
+    color: $primary;
+}
+
+//data table search box style
+.search-box-container {
+    margin-bottom: 1rem;
+    @include flex(center, space-between, row);
+    input.search-box {
+        width: 10rem;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid $darkGray;
+        border-radius: 0.2rem;
+        font-size: 0.9rem;
+        &:focus {
+            outline-color: $darkGray;
+        }
+        &::placeholder {
+            font-size: 0.7rem;
+        }
+    }
+    .filter-container{
+        @include flex(center, space-between, row)
+    }
+    .export-btn {
+        @include grayBtn;
+    }
+}
+
+// dashboard main content top button
+.student-header-container {
+    padding: 1rem 1.5rem;
+    .student-header {
+        @include flex(center, space-between, row);
+        .img-container {
+            @include flex(center, space-between, row);
+            .icon-circle {
+                font-size: 2rem;
+                color: $darkGray;
+            }
+            .heading {
+                font-size: 1rem;
+                letter-spacing: 0.01rem;
+                font-weight: 400;
+                margin-left: 1rem;
+            }
+        }
+        .rounded-btn {
+            border-radius: 2rem;
+            background-color: $darkGray;
+            color: $white;
+            font-size: 0.8rem;
+            text-transform: capitalize;
+            font-weight: 100;
+            padding: 0.4rem 1rem;
+            .MuiSvgIcon-root {
+                color: $white;
+            }
+        }
+        .dropdown-container {
+            width: 10rem;
+        }
+    }
+}
+
+// table action toolbar
+.action-container {
+    width: 3rem;
+    background-color: $darkGray;
+    border-radius: 3rem;
+    padding: 0.2rem;
+    color: $white;
+    @include flex(center, center, row);
+}
+
+//input style
+.custom-input {
+    margin-bottom: 1.7rem !important;
+    .MuiInputLabel-outlined {
+        z-index: 1;
+        transform: translate(14px, 15px) scale(1);
+        pointer-events: none;
+        color: #aaacad;
+        font-weight: 100;
+        font-size: 14px;
+    }
+    fieldset.MuiOutlinedInput-notchedOutline {
+        border-color: $darkGray;
+    }
+    .MuiSvgIcon-root {
+        color: $darkGray;
+    }
+    .MuiFormLabel-filled {
+        color: $darkGray;
+        font-weight: 500;
+    }
+    .MuiOutlinedInput-adornedEnd {
+        padding-right: 0 !important;
+    }
+    .MuiIconButton-root{
+        padding: 0;
+        margin-right: 1rem;
+    }
+    .MuiInputAdornment-positionEnd {
+        margin-left: 0;
+    }
+}
+
+// modal box style
+.modal-wrapper {
+    width: 100%;
+    height: 100vh;
+    // background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    backdrop-filter: blur(1.5px);
+    transition: all 0.3s;
+    .modal-right {
+        background-color: $white;
+        box-shadow: 0px 3px 6px #00000029;
+        width: 24rem;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation: slideLeft 0.4s cubic-bezier(0.18, 1.49, 1, 1);
+        transform: translate(0);
+        @keyframes slideLeft {
+            0% {
+                right: -24rem;
+            }
+            100% {
+                right: 0;
+            }
+        }
+        .card-container {
+            border-radius: 0;
+            box-shadow: none;
+            .modal-header-container {
+                .header {
+                    padding: 0.4rem 1.5rem;
+                    border-bottom: 1px solid $darkGray;
+
+                    @include flex(center, space-between, row);
+                    .title {
+                        font-size: 1.2rem;
+                        font-weight: 800;
+                        color: #403b3b;
+                        text-transform: capitalize;
+                    }
+                    .icon {
+                        color: $darkGray;
+                        font-size: 1rem;
+                        font-weight: 900;
+                    }
+                }
+            }
+            .modal-form-container {
+                padding: 1.5rem;
+                overflow-y: auto;
+                height: calc(100vh - 5rem);
+                @include disableScroll;
+            }
+        }
+    }
+}
+
+// validation errors
+p.message-error {
+    color: red;
+    font-size: 0.7rem !important;
+    margin-top: -1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+// gree btn light
+button.green-btn-light {
+    background-color: #35dda4;
+    color: $white;
+    text-transform: capitalize;
+    width: 100%;
+    height: 2.8rem;
+    &:hover {
+        background-color: #35dda4;
+    }
+}
+
+// upload-input-btn
+.upload-input-btn {
+    @include flex(center, flex-start, row);
+    border: 1px solid #707070;
+    border-radius: 7px;
+    .file-name-container {
+        width: calc(100% - 8rem);
+        height: 2.8rem;
+        @include flex(center, flex-start, row);
+        padding: 0 0.5rem;
+        .filename{
+            font-size: 0.75rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    .upload-btn {
+        width: 8rem;
+        height: 2.8rem;
+        font-weight: 200;
+        background-color: #DCE1E3;
+        border-radius: 0;
+        border-bottom-right-radius: 0.4rem;
+        border-top-right-radius: 0.4rem;
+
+    }
+}

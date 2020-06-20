@@ -1,0 +1,43 @@
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: $primary !important;
+}
+.custom-input {
+    margin-bottom: 1rem;
+    .MuiOutlinedInput-input {
+        padding: 12.5px 14px !important;
+    }
+    .MuiInputLabel-outlined {
+        z-index: 1;
+        transform: translate(14px, 15px) scale(1);
+        pointer-events: none;
+        font-size: 14px;
+        .MuiInputBase-formControl {
+            &:hover {
+                border-color: red;
+            }
+        }
+    }
+}
+.custom-select-input {
+    .MuiInputBase-root {
+        height: 40px;
+    }
+    .MuiInputLabel-outlined {
+        z-index: 1;
+        transform: translate(14px, 14px) scale(1);
+        pointer-events: none;
+        font-size: 14px;
+        font-size: 0.7rem;
+    }
+    .MuiInputLabel-shrink.MuiInputLabel-outlined.MuiFormLabel-filled {
+        font-size: 0.9rem;
+    }
+    .MuiInputBase-input.MuiOutlinedInput-input {
+        height: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 1rem;
+    }
+}
