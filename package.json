@@ -66,7 +66,7 @@
     "csv-parser": "^2.3.3",
     "date-fns": "^2.8.1",
     "fs": "0.0.1-security",
-    "highcharts": "^8.1.0",
+    "highcharts": "^9.0.0",
     "highcharts-react-official": "^3.0.0",
     "immutable": "^4.0.0-rc.12",
     "material-table": "^1.57.2",
