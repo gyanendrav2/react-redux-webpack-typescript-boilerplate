@@ -70,7 +70,7 @@
     "highcharts-react-official": "^3.0.0",
     "immutable": "^4.0.0-rc.12",
     "material-table": "^1.57.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "notistack": "^0.9.16",
     "papaparse": "^5.2.0",
     "react": "^16.13.1",
